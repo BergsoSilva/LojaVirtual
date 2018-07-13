@@ -1,2 +1,2 @@
 # LojaVirtual
-Loja Virual
+Loja Virtual
