@@ -1,5 +1,8 @@
 package com.Silva.AppLojaVirtual.model;
 
+
+import javax.validation.constraints.NotEmpty;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,19 +10,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Produto {
 	@Id
 	private String id;
+	
+    @NotEmpty(message="Descrição não pode ser vazio")
 	private String descricao;
-	private Integer quntidade;
-	private String codEAN;
-	private String valor;
+	
+    private Integer quntidade;
+	
+    @NotEmpty(message="EAN do produto deve ser preenchido")
+	private String codean;
+	
+    private String valor;
 	
 	public Produto() {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -39,13 +48,13 @@ public class Produto {
 	public void setQuntidade(Integer quntidade) {
 		this.quntidade = quntidade;
 	}
-
+	
 	public String getCodEAN() {
-		return codEAN;
+		return codean;
 	}
 
 	public void setCodEAN(String codEAN) {
-		this.codEAN = codEAN;
+		this.codean = codEAN;
 	}
 
 	public String getValor() {
@@ -55,7 +64,5 @@ public class Produto {
 	public void setValor(String valor) {
 		this.valor = valor;
 	}
-	
-	
 
 }

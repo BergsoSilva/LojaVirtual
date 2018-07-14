@@ -2,6 +2,7 @@ package com.Silva.AppLojaVirtual.services;
 
 import java.util.List;
 
+
 import com.Silva.AppLojaVirtual.model.Produto;
 
 public interface ProdutoService {
@@ -10,7 +11,9 @@ public interface ProdutoService {
 	
 	Produto getById(String id);
 	
-	Produto  SaveOrUpdade(Produto produto);
+	Produto save(Produto produto);
+	
+	Produto update(Produto produto);
 	
 	void delete(String id);
 	

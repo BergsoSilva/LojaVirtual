@@ -1,6 +1,7 @@
-package com.Silva.AppLojaVirtual.repositories;
+package com.Silva.AppLojaVirtual.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+
 
 import com.Silva.AppLojaVirtual.model.Produto;
 
