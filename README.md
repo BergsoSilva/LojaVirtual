@@ -3,20 +3,20 @@ Loja Virtual
 
 Back End  (Spring Boot)
 
-Neste projeto enconra-se todos os servicos oferecidos para o cliente https://github.com/BergsoSilva/LojaVirtualCliente.git, parte da lgica de negocios e percistência de dados.
+Neste projeto enconra-se todos os servicos oferecidos para o cliente https://github.com/BergsoSilva/LojaVirtualCliente.git, parte da lógica de negocios e percistência de dados.
 
-Ferramentas Ultilizadas
+*Ferramentas Ultilizadas
   -Spring Toll Suite : https://spring.io/tools/sts/all
   -Spring MVC (Spring Boot)
   
-Banco
+*Banco
     -MongoDB :https://www.mongodb.com/;
     -Spring Data NoSQL(Persistencia de Dados);
-WebService 
+*WebService 
  - RestFull;
  - PostMan (teste do webservice);
  
- Como rodar o pojeto
+ *Como rodar o pojeto
  1- Qualquer IDE (NetBeans, Eclipise etc.)
  2- Instalar o MongoDB;
  3- instalar o Java 8 na maquina;
