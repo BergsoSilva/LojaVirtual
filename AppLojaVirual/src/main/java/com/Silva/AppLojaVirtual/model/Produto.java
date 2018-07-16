@@ -14,7 +14,7 @@ public class Produto {
     @NotEmpty(message="Descrição não pode ser vazio")
 	private String descricao;
 	
-    private Integer quntidade;
+    private Integer quantidade;
 	
     @NotEmpty(message="EAN do produto deve ser preenchido")
 	private String codean;
@@ -39,27 +39,30 @@ public class Produto {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}	
+	public Integer getQuantidade() {
+		return quantidade;
 	}
 
-	public Integer getQuntidade() {
-		return quntidade;
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
 	}
 
-	public void setQuntidade(Integer quntidade) {
-		this.quntidade = quntidade;
-	}
-	
-	public String getCodEAN() {
+
+	public String getCodean() {
 		return codean;
 	}
 
-	public void setCodEAN(String codEAN) {
-		this.codean = codEAN;
+
+	public void setCodean(String codean) {
+		this.codean = codean;
 	}
 
 	public String getValor() {
 		return valor;
 	}
+
 
 	public void setValor(String valor) {
 		this.valor = valor;

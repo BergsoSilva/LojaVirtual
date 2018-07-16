@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,26 +22,26 @@ import com.Silva.AppLojaVirtual.model.Produto;
 import com.Silva.AppLojaVirtual.responses.Response;
 import com.Silva.AppLojaVirtual.services.ProdutoService;
 
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
-@RequestMapping("/app/produto")
-@CrossOrigin(origins="*")
+@RequestMapping("/api")
 public class ProdutoController {
 
 	@Autowired
 	private ProdutoService produtoService;
 	
-	@GetMapping
+	@GetMapping("/produtos")
 	public ResponseEntity<Response<List<Produto>>> listaProduto(){
 		return ResponseEntity.ok( new Response<>(this.produtoService.listAll()));
 	}
 	
-	@GetMapping(path="/{id}")
+	@GetMapping(path="/produtos/{id}")
 	public ResponseEntity<Response<Produto>> listarPorId(@PathVariable(name= "id") String id){
 		
 		return ResponseEntity.ok(new Response<Produto>(this.produtoService.getById(id)));
 	}
 	
-	@PostMapping(value="/novo")
+	@PostMapping(value="/produtos")
 	public ResponseEntity<Response<Produto>> adicionar( @RequestBody @Valid  Produto produto, BindingResult result){
 		
 		if(result.hasErrors()){
@@ -53,7 +54,7 @@ public class ProdutoController {
 		return ResponseEntity.ok( new Response<Produto>(this.produtoService.save(produto)));
 	}
 	
-	@PostMapping(path="/{id}")
+	@PutMapping(path="/produtos/{id}")
 	public ResponseEntity<Response<Produto>> atualizar(@PathVariable(name= "id") String id,@Valid @RequestBody Produto produto, BindingResult result){
 		
 		if(result.hasErrors()){
@@ -67,7 +68,7 @@ public class ProdutoController {
 		return ResponseEntity.ok(new Response<Produto>(this.produtoService.update(produto)));
 	}
 	
-	@DeleteMapping(path= "/{id}")
+	@DeleteMapping(path= "produtos/{id}")
 	public ResponseEntity< Response<Boolean>> remover(@PathVariable(name="id") String id){
 		this.produtoService.delete(id);
 		
